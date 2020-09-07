@@ -21,7 +21,7 @@ import java.util.Set;
 
 
 @Transactional
-@Component
+//@Component
 public class SeedData implements CommandLineRunner {
     /**
      * Connects the customer table to this SeedData method
@@ -405,79 +405,79 @@ public class SeedData implements CommandLineRunner {
                 11000.00,
                 "PPHGRTS",
                 a10);
-//
+
 //        Order o01 = new Order(1000.00,
 //                600.00,
 //                c13,
 //                "SOD");
-//        o01.addPayments(pay1);
+//        o01.setPayments(pay1);
 //
 //        Order o02 = new Order(3000.00,
 //                500.00,
 //                c19,
 //                "SOD");
-//        o02.addPayments(pay2);
+//        o02.setPayments(pay2);
 //
 //        Order o03 = new Order(4500.00,
 //                900.00,
 //                c07,
 //                "SOD");
-//        o03.addPayments(pay3);
-//        o03.addPayments(pay2);
+//        o03.setPayments(pay3);
+//        o03.setPayments(pay2);
 //
 //        Order o04 = new Order(2000.00,
 //                0.00,
 //                c16,
 //                "SOD");
-//        o04.addPayments(pay4);
+//        o04.setPayments(pay4);
 //
 //        Order o05 = new Order(4000.00,
 //                600.00,
 //                c22,
 //                "SOD");
-//        o05.addPayments(pay2);
+//        o05.setPayments(pay2);
 //
 //        Order o06 = new Order(2000.00,
 //                0.00,
 //                c12,
 //                "SOD");
-//        o06.addPayments(pay3);
+//        o06.setPayments(pay3);
 //
 //        Order o07 = new Order(3500.00,
 //                2000.00,
 //                c02,
 //                "SOD");
-//        o07.addPayments(pay4);
+//        o07.setPayments(pay4);
 //
 //        Order o08 = new Order(2500.00,
 //                400.00,
 //                c03,
 //                "SOD");
-//        o08.addPayments(pay1);
+//        o08.setPayments(pay1);
 //
 //        Order o09 = new Order(500.00,
 //                0.00,
 //                c23,
 //                "SOD");
-//        o09.addPayments(pay3);
+//        o09.setPayments(pay3);
 //
 //        Order o10 = new Order(4000.00,
 //                700.00,
 //                c07,
 //                "SOD");
-//        o10.addPayments(pay4);
+//        o10.setPayments(pay4);
 //
 //        Order o11 = new Order(1500.00,
 //                600.00,
 //                c08,
 //                "SOD");
-//        o11.addPayments(pay2);
+//        o11.setPayments(pay2);
 //
 //        Order o12 = new Order(2500.00,
 //                0.00,
 //                c25,
 //                "SOD");
-//        o12.addPayments(pay1);
+//        o12.setPayments(pay1);
 
         agentrepos.save(a01);
         agentrepos.save(a02);
@@ -518,17 +518,17 @@ public class SeedData implements CommandLineRunner {
         custrepos.save(c24);
         custrepos.save(c25);
 //
-//        ordersrepos.save(o01);
-//        ordersrepos.save(o02);
-//        ordersrepos.save(o03);
-//        ordersrepos.save(o04);
-//        ordersrepos.save(o05);
-//        ordersrepos.save(o06);
-//        ordersrepos.save(o07);
-//        ordersrepos.save(o08);
-//        ordersrepos.save(o09);
-//        ordersrepos.save(o10);
-//        ordersrepos.save(o11);
-//        ordersrepos.save(o12);
+        ordersrepos.save(o01);
+        ordersrepos.save(o02);
+        ordersrepos.save(o03);
+        ordersrepos.save(o04);
+        ordersrepos.save(o05);
+        ordersrepos.save(o06);
+        ordersrepos.save(o07);
+        ordersrepos.save(o08);
+        ordersrepos.save(o09);
+        ordersrepos.save(o10);
+        ordersrepos.save(o11);
+        ordersrepos.save(o12);
     }
 }
