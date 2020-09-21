@@ -8,6 +8,8 @@ import java.util.List;
 
 @Entity
 @Table( name = "customers")
+@JsonIgnoreProperties(value= {"hasvalueforopeningamt, hasvalueforreceiveamt, " +
+        "hasvalueforpaymentamt, hasvalueforoutstandingamt"})
 public class Customer {
 
     @Id
@@ -22,9 +24,17 @@ public class Customer {
     private String workingarea;
     private String custcountry;
     private String grade;
+    @Transient
+    public boolean hasvalueforopeningamt = false;
     private double openingamt;
+    @Transient
+    public boolean hasvalueforreceiveamt = false;
     private double receiveamt;
+    @Transient
+    public boolean hasvalueforpaymentamt = false;
     private double paymentamt;
+    @Transient
+    public boolean hasvalueforoutstandingamt = false;
     private double outstandingamt;
     private String phone;
 
@@ -38,7 +48,6 @@ public class Customer {
     private List<Order> orders = new ArrayList<>();
 
     public Customer(){
-
     }
 
     public Customer(String custname, String custcity, String workingarea,
@@ -118,6 +127,7 @@ public class Customer {
     }
 
     public void setOpeningamt(double openingamt) {
+        hasvalueforopeningamt = true;
         this.openingamt = openingamt;
     }
 
@@ -126,6 +136,7 @@ public class Customer {
     }
 
     public void setReceiveamt(double receiveamt) {
+        hasvalueforreceiveamt = true;
         this.receiveamt = receiveamt;
     }
 
@@ -134,6 +145,7 @@ public class Customer {
     }
 
     public void setPaymentamt(double paymentamt) {
+        hasvalueforpaymentamt = true;
         this.paymentamt = paymentamt;
     }
 
@@ -142,6 +154,7 @@ public class Customer {
     }
 
     public void setOutstandingamt(double outstandingamt) {
+        hasvalueforoutstandingamt = true;
         this.outstandingamt = outstandingamt;
     }
 
@@ -151,5 +164,13 @@ public class Customer {
 
     public void setPhone(String phone) {
         this.phone = phone;
+    }
+
+    public List<Order> getOrders() {
+        return orders;
+    }
+
+    public void setOrders(List<Order> orders) {
+        this.orders = orders;
     }
 }
